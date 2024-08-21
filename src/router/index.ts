@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // {
-    //   path: '/',
-    //   component: () => import('@/views/Home.vue'),
-    //   meta: { title: 'Home' },
-    // },
+    {
+      path: '/myFlame',
+      component: () => import('@/views/MyFlame.vue'),
+      meta: { title: 'myFlame' },
+    },
   ],
 });
 
