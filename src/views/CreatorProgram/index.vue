@@ -115,7 +115,7 @@
     </div>
 
     <div
-      class="fixed bottom-0 left-0 z-999 py-14.5 px-20 bg-#fff w-full flex justify-between"
+      class="fixed bottom-0 left-0 py-14.5 px-20 bg-#fff w-full flex justify-between"
     >
       <div class="flex items-center gap-8">
         <img
@@ -135,15 +135,21 @@
       <div
         class="bg-#0A7AFF text-#fff rounded-35 flex items-center justify-center px-12 py-10"
       >
-        <div>已加入创作者计划</div>
+        <div @click="openCreatorProp">已加入创作者计划</div>
         <img src="/creatorProgram/right_arrow2.png" alt="" class="w-16 h-16" />
       </div>
     </div>
+
+    <joinCreatorProp
+      :visible="isShowCreatorProp"
+      @linkUrl="returnCreatorProp"
+    ></joinCreatorProp>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import joinCreatorProp from './joinCreatorProp.vue';
 
 const isAdvertisement = ref(true);
 const isFlame = ref(false);
@@ -188,6 +194,15 @@ const commonProblem = [
       '当您的创作取得一定成果，平台也需要投入更多资源来持续优化服务和推广，以支持您获得更大的成功。',
   },
 ];
+
+const isShowCreatorProp = ref(false);
+const openCreatorProp = () => {
+  isShowCreatorProp.value = !isShowCreatorProp.value;
+};
+
+const returnCreatorProp = (value: boolean) => {
+  isShowCreatorProp.value = value;
+};
 </script>
 
 <style scoped lang="scss">
