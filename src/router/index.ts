@@ -8,6 +8,11 @@ const router = createRouter({
       component: () => import('@/views/MyFlame.vue'),
       meta: { title: 'myFlame' },
     },
+    {
+      path: '/creatorProgram',
+      component: () => import('@/views/CreatorProgram.vue'),
+      meta: { title: 'creatorProgram' },
+    },
   ],
 });
 
