@@ -10,7 +10,7 @@ const router = createRouter({
     },
     {
       path: '/creatorProgram',
-      component: () => import('@/views/CreatorProgram.vue'),
+      component: () => import('@/views/CreatorProgram/index.vue'),
       meta: { title: 'creatorProgram' },
     },
   ],
