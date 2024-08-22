@@ -13,6 +13,11 @@ const router = createRouter({
       component: () => import('@/views/CreatorProgram/index.vue'),
       meta: { title: 'creatorProgram' },
     },
+    {
+      path: '/hasWidget',
+      component: () => import('@/views/HasWidget.vue'),
+      meta: { title: 'hasWidget' },
+    },
   ],
 });
 

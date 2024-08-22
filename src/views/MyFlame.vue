@@ -79,6 +79,7 @@
         v-for="(item, index) in featureList"
         :key="index"
         class="w-full h-58 bg-#F6F7F9 rounded-16 flex justify-between items-center px-10"
+        @click="goLink(item.value)"
       >
         <div class="flex justify-left items-center gap-8">
           <img :src="item.img" alt="" class="w-28 h-28" />
@@ -92,6 +93,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const flameList = [
   {
@@ -151,6 +153,15 @@ const featureList = [
     value: '在线客服',
   },
 ];
+
+const router = useRouter();
+
+const goLink = (value: string) => {
+  if (value === '已解锁组件') {
+    return router.push('/hasWidget');
+  }
+  return alert('暂时没有客服');
+};
 </script>
 
 <style scoped lang="scss">
